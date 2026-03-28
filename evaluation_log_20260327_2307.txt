@@ -1,0 +1,45 @@
+
+==================================================
+📄 ASSIGNMENT 3 EVALUATION REPORT
+⏰ Time: 2026-03-27 23:07:27
+🤖 Agent Mode: GRAPH
+==================================================
+
+🚀 STARTING AI-POWERED EVALUATION...
+==================================================
+
+Running: Test A: Apple Revenue...
+--- 🔍 RETRIEVING ---
+🎯 Routing to: apple
+--- ⚖️ GRADING ---
+   Relevance Grade: yes
+--- ✍️ GENERATING ---
+A: Apple's total net sales for the year ended September 28, 2024, is $391,035 million. [Source: Apple 10-K]
+✅ PASS (8.05s)
+--------------------------------------------------
+Running: Test B: Tesla R&D...
+--- 🔍 RETRIEVING ---
+🎯 Routing to: tesla
+--- ⚖️ GRADING ---
+   Relevance Grade: yes
+--- ✍️ GENERATING ---
+A: Tesla's research and development (R&D) expenses for the year ended December 31, 2024, were $4,540 million. [Source: Tesla 10-K]
+❌ FAIL (3.24s)
+   Agent Answer: Tesla's research and development (R&D) expenses for the year ended December 31, 2024, were $4,540 million. [Source: Tesla 10-K]
+   Judge Verdict: FAIL
+--------------------------------------------------
+Running: Test D: Apple Services Cost...
+--- 🔍 RETRIEVING ---
+🎯 Routing to: apple
+--- ⚖️ GRADING ---
+   Relevance Grade: yes
+--- ✍️ GENERATING ---
+A: Apple's "Cost of sales - Services" for the year ended September 28, 2024, is $25,119 million. [Source: Apple 10-K]
+✅ PASS (3.86s)
+--------------------------------------------------
+Running: Test E: Tesla Energy Revenue...
+--- 🔍 RETRIEVING ---
+🎯 Routing to: tesla
+--- ⚖️ GRADING ---
+   Relevance Grade: yes
+--- ✍️ GENERATING ---

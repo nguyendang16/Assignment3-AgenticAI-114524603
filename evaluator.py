@@ -13,7 +13,7 @@ from langgraph_agent import run_graph_agent, run_legacy_agent
 from config import get_llm
 from langchain_core.prompts import ChatPromptTemplate
 
-TEST_MODE = "LEGACY" # Options: "GRAPH" or "LEGACY"
+TEST_MODE = "GRAPH" # Options: "GRAPH" or "LEGACY"
 
 class DualLogger:
     def __init__(self, filename="evaluation_log.txt"):

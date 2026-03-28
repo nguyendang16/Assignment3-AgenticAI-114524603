@@ -1,0 +1,178 @@
+
+==================================================
+📄 ASSIGNMENT 3 EVALUATION REPORT
+⏰ Time: 2026-03-28 23:20:10
+🤖 Agent Mode: GRAPH
+==================================================
+
+🚀 STARTING AI-POWERED EVALUATION...
+==================================================
+
+Running: Test A: Apple Revenue...
+--- 🔍 RETRIEVING ---
+🎯 Routing to: apple
+--- ⚖️ GRADING ---
+   Relevance Grade: yes
+--- ✍️ GENERATING ---
+A: Apple's total net sales for the year 2024 is $391,035 million. [Source: Apple 10-K]
+✅ PASS (6.98s)
+--------------------------------------------------
+Running: Test B: Tesla R&D...
+--- 🔍 RETRIEVING ---
+🎯 Routing to: tesla
+--- ⚖️ GRADING ---
+   Relevance Grade: yes
+--- ✍️ GENERATING ---
+A: Tesla's R&D expenses for the year ended December 31, 2024, are $4,540 million. [Source: Tesla 10-K]
+❌ FAIL (3.56s)
+   Agent Answer: Tesla's R&D expenses for the year ended December 31, 2024, are $4,540 million. [Source: Tesla 10-K]
+   Judge Verdict: FAIL
+--------------------------------------------------
+Running: Test D: Apple Services Cost...
+--- 🔍 RETRIEVING ---
+🎯 Routing to: apple
+--- ⚖️ GRADING ---
+   Relevance Grade: yes
+--- ✍️ GENERATING ---
+A: Apple's "Cost of sales - Services" for the year 2024 is $25,119 million. [Source: Apple 10-K]
+✅ PASS (3.90s)
+--------------------------------------------------
+Running: Test E: Tesla Energy Revenue...
+--- 🔍 RETRIEVING ---
+🎯 Routing to: tesla
+--- ⚖️ GRADING ---
+   Relevance Grade: yes
+--- ✍️ GENERATING ---
+A: Tesla's revenue from "Energy generation and storage" for the year ended December 31, 2024, is $10,086 million. [Source: Tesla 10-K]
+❌ FAIL (3.56s)
+   Agent Answer: Tesla's revenue from "Energy generation and storage" for the year ended December 31, 2024, is $10,086 million. [Source: Tesla 10-K]
+   Judge Verdict: FAIL
+--------------------------------------------------
+Running: Test G: Unknown Info...
+--- 🔍 RETRIEVING ---
+🎯 Routing to: apple
+--- ⚖️ GRADING ---
+   Relevance Grade: no
+--- 🔄 REWRITING QUERY ---
+   New Question: What is the expected retail price of the iPhone 17 that Apple plans to release in 2025?
+--- 🔍 RETRIEVING ---
+🎯 Routing to: apple
+--- ⚖️ GRADING ---
+   Relevance Grade: no
+--- 🔄 REWRITING QUERY ---
+   New Question: What is the expected retail price of the iPhone 17 that Apple plans to release in 2025, considering total revenues?
+--- 🔍 RETRIEVING ---
+🎯 Routing to: apple
+--- ⚖️ GRADING ---
+   Relevance Grade: no
+   (Max retries reached, generating anyway...)
+--- ✍️ GENERATING ---
+A: The specific information regarding the expected retail price of the iPhone 17 that Apple plans to release in 2025 is not available in the provided documents.
+✅ PASS (7.57s)
+--------------------------------------------------
+Running: Test A1 [Eng]: Apple Revenue...
+--- 🔍 RETRIEVING ---
+🎯 Routing to: apple
+--- ⚖️ GRADING ---
+   Relevance Grade: yes
+--- ✍️ GENERATING ---
+A: Apple's Total Net Sales for the fiscal year 2024 was $391,035 million. [Source: Apple 10-K]
+✅ PASS (3.04s)
+--------------------------------------------------
+Running: Test A2 [Eng]: Tesla Automotive Revenue...
+--- 🔍 RETRIEVING ---
+🎯 Routing to: tesla
+--- ⚖️ GRADING ---
+   Relevance Grade: yes
+--- ✍️ GENERATING ---
+A: The specific revenue figure for 'Automotive sales' for Tesla in 2024 is $72,480 million. [Source: Tesla 10-K]
+❌ FAIL (3.42s)
+   Agent Answer: The specific revenue figure for 'Automotive sales' for Tesla in 2024 is $72,480 million. [Source: Tesla 10-K]
+   Judge Verdict: FAIL
+--------------------------------------------------
+Running: Test B1 [Mixed]: Apple R&D...
+--- 🔍 RETRIEVING ---
+🎯 Routing to: apple
+--- ⚖️ GRADING ---
+   Relevance Grade: yes
+--- ✍️ GENERATING ---
+A: Apple's research and development expenses for the year 2024 are $31,370 million. [Source: Apple 10-K]
+✅ PASS (3.92s)
+--------------------------------------------------
+Running: Test B2 [Mixed]: Tesla CapEx...
+--- 🔍 RETRIEVING ---
+🎯 Routing to: tesla
+--- ⚖️ GRADING ---
+   Relevance Grade: yes
+--- ✍️ GENERATING ---
+A: The specific information requested is not available in the provided documents.
+❌ FAIL (3.15s)
+   Agent Answer: The specific information requested is not available in the provided documents.
+   Judge Verdict: FAIL
+--------------------------------------------------
+Running: Test C1 [Eng]: R&D Comparison...
+--- 🔍 RETRIEVING ---
+🎯 Routing to: both
+--- ⚖️ GRADING ---
+   Relevance Grade: yes
+--- ✍️ GENERATING ---
+A: In 2024, Apple's Research and Development (R&D) expenses were $31,370 million [Source: Apple 10-K]. Tesla's R&D expenses were reported as 5% of their revenue, which amounts to approximately $4.84 billion (since their total revenue was $97.69 billion) [Source: Tesla 10-K].
+
+Comparing the two, Apple s...
+✅ PASS (7.84s)
+--------------------------------------------------
+Running: Test C2 [Eng]: Gross Margin Analysis...
+--- 🔍 RETRIEVING ---
+🎯 Routing to: both
+--- ⚖️ GRADING ---
+   Relevance Grade: yes
+--- ✍️ GENERATING ---
+A: In 2024, Apple's total gross margin was approximately 46.2% (calculated as Gross Margin of $180,683 million divided by Total Net Sales of $391,035 million) [Source: Apple 10-K]. 
+
+Tesla's gross margin for total automotive and services decreased to approximately 16.9% in 2024 [Source: Tesla 10-K].
+
+T...
+✅ PASS (6.33s)
+--------------------------------------------------
+Running: Test D1 [Eng]: Apple Services Cost...
+--- 🔍 RETRIEVING ---
+🎯 Routing to: apple
+--- ⚖️ GRADING ---
+   Relevance Grade: yes
+--- ✍️ GENERATING ---
+A: Apple's 'Cost of sales' specifically for 'Services' in 2024 was $25,119 million. [Source: Apple 10-K]
+✅ PASS (3.99s)
+--------------------------------------------------
+Running: Test E1 [Mixed]: 2025 Projection (Trap)...
+--- 🔍 RETRIEVING ---
+🎯 Routing to: apple
+--- ⚖️ GRADING ---
+   Relevance Grade: no
+--- 🔄 REWRITING QUERY ---
+   New Question: Does the financial report mention Apple’s projected iPhone sales target for 2025?
+--- 🔍 RETRIEVING ---
+🎯 Routing to: apple
+--- ⚖️ GRADING ---
+   Relevance Grade: no
+--- 🔄 REWRITING QUERY ---
+   New Question: Does the financial report provide Apple’s total net sales target for iPhone in 2025?
+--- 🔍 RETRIEVING ---
+🎯 Routing to: apple
+--- ⚖️ GRADING ---
+   Relevance Grade: no
+   (Max retries reached, generating anyway...)
+--- ✍️ GENERATING ---
+A: The specific information requested is not available in the provided documents.
+✅ PASS (10.89s)
+--------------------------------------------------
+Running: Test F1 [Eng]: CEO Identity...
+--- 🔍 RETRIEVING ---
+🎯 Routing to: tesla
+--- ⚖️ GRADING ---
+   Relevance Grade: yes
+--- ✍️ GENERATING ---
+A: Elon Musk signed the 10-K report as the Chief Executive Officer for Tesla. [Source: Tesla 10-K]
+✅ PASS (3.39s)
+--------------------------------------------------
+
+📊 FINAL SCORE: 10/14

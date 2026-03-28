@@ -1,0 +1,163 @@
+
+==================================================
+📄 ASSIGNMENT 3 EVALUATION REPORT
+⏰ Time: 2026-03-27 23:04:41
+🤖 Agent Mode: GRAPH
+==================================================
+
+🚀 STARTING AI-POWERED EVALUATION...
+==================================================
+
+Running: Test A: Apple Revenue...
+--- 🔍 RETRIEVING ---
+🎯 Routing to: apple
+--- ⚖️ GRADING ---
+   Relevance Grade: yes
+--- ✍️ GENERATING ---
+A: Apple's total net sales for the year ended September 28, 2024, is $391,035 million. [Source: Apple 10-K]
+✅ PASS (6.28s)
+--------------------------------------------------
+Running: Test B: Tesla R&D...
+--- 🔍 RETRIEVING ---
+🎯 Routing to: tesla
+--- ⚖️ GRADING ---
+   Relevance Grade: yes
+--- ✍️ GENERATING ---
+A: Tesla's research and development (R&D) expenses for the year ended December 31, 2024, were $4,540 million. [Source: Tesla 10-K]
+❌ FAIL (3.77s)
+   Agent Answer: Tesla's research and development (R&D) expenses for the year ended December 31, 2024, were $4,540 million. [Source: Tesla 10-K]
+   Judge Verdict: FAIL
+--------------------------------------------------
+Running: Test D: Apple Services Cost...
+--- 🔍 RETRIEVING ---
+🎯 Routing to: apple
+--- ⚖️ GRADING ---
+   Relevance Grade: yes
+--- ✍️ GENERATING ---
+A: Apple's cost of sales for services in 2024 is $25,119 million. [Source: Apple 10-K]
+✅ PASS (5.71s)
+--------------------------------------------------
+Running: Test E: Tesla Energy Revenue...
+--- 🔍 RETRIEVING ---
+🎯 Routing to: tesla
+--- ⚖️ GRADING ---
+   Relevance Grade: yes
+--- ✍️ GENERATING ---
+A: Tesla's revenue from energy generation and storage for the year 2024 is $10,086 million. [Source: Tesla 10-K]
+❌ FAIL (4.02s)
+   Agent Answer: Tesla's revenue from energy generation and storage for the year 2024 is $10,086 million. [Source: Tesla 10-K]
+   Judge Verdict: FAIL
+--------------------------------------------------
+Running: Test G: Unknown Info...
+--- 🔍 RETRIEVING ---
+🎯 Routing to: apple
+--- ⚖️ GRADING ---
+   Relevance Grade: no
+--- 🔄 REWRITING QUERY ---
+   New Question: Apple 在其 2025 年的 10-K 文件中預計 iPhone 17 的售價將如何影響其收入和成本結構？
+--- 🔍 RETRIEVING ---
+🎯 Routing to: apple
+--- ⚖️ GRADING ---
+   Relevance Grade: no
+--- 🔄 REWRITING QUERY ---
+   New Question: Apple 在其 2025 年的 10-K 文件中預計 iPhone 17 的售價將如何影響其收入、成本結構及淨收入，特別是在綜合損益表和綜合資產負債表中的相關項目？
+--- 🔍 RETRIEVING ---
+🎯 Routing to: apple
+--- ⚖️ GRADING ---
+   Relevance Grade: no
+   (Max retries reached, generating anyway...)
+--- ✍️ GENERATING ---
+A: I don't know. The provided documents do not contain this information.
+✅ PASS (11.89s)
+--------------------------------------------------
+Running: Test A1 [Eng]: Apple Revenue...
+--- 🔍 RETRIEVING ---
+🎯 Routing to: apple
+--- ⚖️ GRADING ---
+   Relevance Grade: yes
+--- ✍️ GENERATING ---
+A: Apple's Total Net Sales for the fiscal year 2024 were $391,035 million. [Source: Apple 10-K]
+✅ PASS (4.19s)
+--------------------------------------------------
+Running: Test A2 [Eng]: Tesla Automotive Revenue...
+--- 🔍 RETRIEVING ---
+🎯 Routing to: tesla
+--- ⚖️ GRADING ---
+   Relevance Grade: yes
+--- ✍️ GENERATING ---
+A: The specific revenue figure for 'Automotive sales' for Tesla in 2024 is $72,480 million. [Source: Tesla 10-K]
+❌ FAIL (4.09s)
+   Agent Answer: The specific revenue figure for 'Automotive sales' for Tesla in 2024 is $72,480 million. [Source: Tesla 10-K]
+   Judge Verdict: FAIL
+--------------------------------------------------
+Running: Test B1 [Mixed]: Apple R&D...
+--- 🔍 RETRIEVING ---
+🎯 Routing to: apple
+--- ⚖️ GRADING ---
+   Relevance Grade: yes
+--- ✍️ GENERATING ---
+A: Apple's research and development expenses for the year ended September 28, 2024, were $31,370 million. [Source: Apple 10-K]
+✅ PASS (4.31s)
+--------------------------------------------------
+Running: Test B2 [Mixed]: Tesla CapEx...
+--- 🔍 RETRIEVING ---
+🎯 Routing to: tesla
+--- ⚖️ GRADING ---
+   Relevance Grade: no
+--- 🔄 REWRITING QUERY ---
+   New Question: Tesla 在 2024 年的資本支出 (Capital Expenditures) 具體數字為何？請參考其 10-K 或 10-Q 報告中的現金流量表 (Consolidated Statements of Cash Flows) 相關部分。
+--- 🔍 RETRIEVING ---
+🎯 Routing to: tesla
+--- ⚖️ GRADING ---
+   Relevance Grade: no
+--- 🔄 REWRITING QUERY ---
+   New Question: 請查詢 Tesla 在 2024 年的資本支出 (Capital Expenditures) 具體數字，並參考其 10-K 或 10-Q 報告中的現金流量表 (Consolidated Statements of Cash Flows) 相關部分。
+--- 🔍 RETRIEVING ---
+🎯 Routing to: tesla
+--- ⚖️ GRADING ---
+   Relevance Grade: no
+   (Max retries reached, generating anyway...)
+--- ✍️ GENERATING ---
+A: I don't know. The provided documents do not contain this information.
+❌ FAIL (17.32s)
+   Agent Answer: I don't know. The provided documents do not contain this information.
+   Judge Verdict: FAIL
+--------------------------------------------------
+Running: Test C1 [Eng]: R&D Comparison...
+--- 🔍 RETRIEVING ---
+🎯 Routing to: both
+--- ⚖️ GRADING ---
+   Relevance Grade: no
+--- 🔄 REWRITING QUERY ---
+   New Question: Compare the Research and Development (R&D) expenses reported by Apple Inc. and Tesla, Inc. in their respective 2024 10-K filings. Which company reported higher R&D expenditures in the Consolidated Statements of Operations?
+--- 🔍 RETRIEVING ---
+🎯 Routing to: both
+--- ⚖️ GRADING ---
+   Relevance Grade: no
+--- 🔄 REWRITING QUERY ---
+   New Question: Compare the Research and Development (R&D) expenses reported by Apple Inc. and Tesla, Inc. in their respective 2024 10-K filings, specifically within the Consolidated Statements of Operations. Which company reported higher R&D expenditures for the fiscal year?
+--- 🔍 RETRIEVING ---
+🎯 Routing to: both
+--- ⚖️ GRADING ---
+   Relevance Grade: no
+   (Max retries reached, generating anyway...)
+--- ✍️ GENERATING ---
+A: The provided documents do not contain this information.
+❌ FAIL (16.13s)
+   Agent Answer: The provided documents do not contain this information.
+   Judge Verdict: FAIL
+--------------------------------------------------
+Running: Test C2 [Eng]: Gross Margin Analysis...
+--- 🔍 RETRIEVING ---
+🎯 Routing to: both
+--- ⚖️ GRADING ---
+   Relevance Grade: no
+--- 🔄 REWRITING QUERY ---
+   New Question: For the fiscal year 2024, which company reported a higher Total Gross Margin percentage, as detailed in their respective Consolidated Statements of Operations, Apple or Tesla? Please provide the approximate percentages.
+--- 🔍 RETRIEVING ---
+🎯 Routing to: both
+--- ⚖️ GRADING ---
+   Relevance Grade: no
+--- 🔄 REWRITING QUERY ---
+   New Question: For the fiscal year 2024, which company reported a higher Total Gross Margin percentage, as detailed in their respective Consolidated Statements of Operations, Apple Inc. or Tesla, Inc.? Please provide the approximate percentages based on their reported Revenue and Cost of Revenue.
+--- 🔍 RETRIEVING ---
