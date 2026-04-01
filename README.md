@@ -1,68 +1,143 @@
-**You can edit functions in `graph_agent.py`, and in evaluator.py can change test_mode (LEGACY is langchain mode, GRAPH is langgraph)**  
+# Financial Document RAG Agent with LangGraph
 
-# 🛠️ Prerequisites
-Before you begin, ensure you have the following installed:
+A Retrieval-Augmented Generation (RAG) agent for analyzing Apple and Tesla 10-K financial reports using LangGraph workflow.
 
-* Python 3.11 (Strict requirement) 
+## Features
 
-* Google Cloud API Key or other LLM Key
-# ⚙️ Environment Setup
-### 1. Virtual Environment Setup
+- **Intelligent Query Routing**: Automatically routes questions to Apple, Tesla, or both data sources
+- **Document Grading**: Filters irrelevant documents before generation
+- **Answer Generation**: Produces English answers with proper citations
+- **Query Rewriting**: Refines search queries when initial retrieval fails
+- **Multi-Provider LLM Support**: Compatible with Google Gemini, OpenAI, and Anthropic
+- **Legacy Agent**: Includes ReAct-based agent for comparison
 
-It is highly recommended to use a virtual environment to manage dependencies.
+## Architecture
 
-**For macOS / Linux:**
 ```
-# Create virtual environment
-python -m venv venv
+Question → Retrieve → Grade Documents → Generate Answer
+                ↑            ↓
+                ←── Rewrite ←┘ (if irrelevant)
+```
 
-# Activate environment
+## Prerequisites
+
+- Python 3.11 (Required)
+- API Key for one of: Google Gemini, OpenAI, or Anthropic
+
+## Setup
+
+### 1. Virtual Environment
+
+**macOS / Linux:**
+```bash
+python -m venv venv
 source venv/bin/activate
 ```
-**For Windows:**
-```
-# Create virtual environment
-python -m venv venv
 
-# Activate environment
+**Windows:**
+```bash
+python -m venv venv
 venv\Scripts\activate
 ```
 
 ### 2. Install Dependencies
 
-`pip install -r requirements.txt`
+```bash
+pip install -r requirements.txt
+```
 
-### 3. Environment Variables (.env)
+### 3. Environment Variables
 
-Rename the file `.env_example` to `.env` in the root directory and add your API_KEY
+Copy `.env_example` to `.env` and configure your API key:
 
-# 📂 File Descriptions
+```bash
+cp .env_example .env
+```
 
-* **data/:** Folder containing the raw PDF financial reports
-* **langgraph_agent.py:** [MAIN WORKSPACE] This is where you will write your code. It contains the logic for:
-  * PDF Ingestion: `initialize_vector_dbs()`
+Edit `.env` to set your preferred LLM provider:
+```
+LLM_PROVIDER=google  # Options: google, openai, anthropic
+GOOGLE_API_KEY=your_api_key_here
+```
 
-  *  Graph Nodes: `retrieve_node`, `grade_documents_node`, `generate_node`, `rewrite_node`.
+### 4. Add Financial Reports
 
-  *  Legacy Agent: `run_legacy_agent` (The baseline for comparison).
-* **evaluator.py:** The benchmark testing script. It runs a suite of test cases (Apple Revenue, Tesla R&D, Comparison, Traps) and uses "LLM-as-a-Judge" to score your agent (Pass/Fail).
-* **config.py:** Configuration file that handles API key loading and initializes the LLM and Embedding models.
+Place PDF files in the `data/` folder:
+- `FY24_Q4_Consolidated_Financial_Statements.pdf` (Apple 10-K)
+- `tsla-20241231-gen.pdf` (Tesla 10-K)
 
+## Usage
 
-# 📝 Student Tasks
-**You need to complete the TODO sections in `langgraph_agent.py`.**
-* Task 1 (Legacy): Implement the run_legacy_agent Prompt Template to establish a baseline (langchain).
+### Step 1: Build Vector Database
 
-* Task 2 (Router): Implement the retrieve_node logic to route queries to "apple", "tesla", or "both".
+```bash
+python build_rag.py
+```
 
-* Task 3 (Grader): Implement the grade_documents_node to filter out irrelevant documents.
+This creates ChromaDB vector stores from the PDF documents.
 
-* Task 4 (Generator): Implement the generate_node to answer questions in English with Citations.
+### Step 2: Run Evaluation
 
-* Task 5 (Rewriter): Implement the rewrite_node to refine search queries when retrieval fails.
+```bash
+python evaluator.py
+```
 
-# 🚀 Execution Order
+Runs 14 test cases covering:
+- Single company queries (Apple/Tesla revenue, R&D, costs)
+- Cross-company comparisons
+- Trap questions (unknown/future information)
 
-* Step1: `python build_rag.py`: Before running any agents, you must ingest the PDFs and convert them into vector embeddings. This allows you to experiment with different chunking strategies without re-running the evaluation logic every time.
-* Step2: `python evaluator.py`: Once the database is ready, run the evaluator to benchmark your agent.
-  
+## Project Structure
+
+```
+├── langgraph_agent.py    # Main LangGraph agent with workflow nodes
+├── build_rag.py          # PDF ingestion and vector DB builder
+├── evaluator.py          # Benchmark testing with LLM-as-Judge
+├── config.py             # LLM and embedding configuration
+├── data/                 # PDF financial reports
+├── chroma_db/            # Vector database storage
+└── eval_output/          # Evaluation results
+```
+
+## Key Components
+
+### `langgraph_agent.py`
+- `retrieve_node`: Routes queries and retrieves relevant documents
+- `grade_documents_node`: Assesses document relevance
+- `generate_node`: Generates final answers with citations
+- `rewrite_node`: Reformulates queries for better retrieval
+- `run_legacy_agent`: ReAct-based agent for baseline comparison
+
+### `config.py`
+- Multi-provider LLM factory (Google, OpenAI, Anthropic)
+- Local HuggingFace embeddings (`paraphrase-multilingual-MiniLM-L12-v2`)
+
+## Configuration Options
+
+In `evaluator.py`, change `TEST_MODE` to switch between agents:
+```python
+TEST_MODE = "GRAPH"   # LangGraph workflow agent
+TEST_MODE = "LEGACY"  # ReAct-based agent
+```
+
+## Evaluation Results
+
+Latest benchmark score: **10/14** test cases passed
+
+| Category | Status |
+|----------|--------|
+| Apple Revenue | ✅ Pass |
+| Apple R&D | ✅ Pass |
+| Apple Services Cost | ✅ Pass |
+| Tesla CEO Identity | ✅ Pass |
+| R&D Comparison | ✅ Pass |
+| Gross Margin Analysis | ✅ Pass |
+| Unknown Info (Trap) | ✅ Pass |
+
+## Tech Stack
+
+- **Framework**: LangChain, LangGraph
+- **Vector Store**: ChromaDB
+- **Embeddings**: HuggingFace Sentence Transformers
+- **LLMs**: Google Gemini / OpenAI GPT / Anthropic Claude
+- **PDF Processing**: PyMuPDF  
